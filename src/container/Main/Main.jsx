@@ -1,5 +1,14 @@
 import React from 'react';
+import Axios from 'axios';
 
-const Main = () => <div>MainPage</div>;
+import { Landing, MainComponent } from '../../components/Main';
+import { MainContainer } from '../../styles/main';
+
+const Main = () => {
+  const Login
+  return (
+    <MainContainer>{localStorage.getItem('token') ? <MainComponent /> : <Landing />}</MainContainer>
+  );
+};
 
 export default Main;
