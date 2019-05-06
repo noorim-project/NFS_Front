@@ -1,5 +1,7 @@
 import react from 'react';
 
-const MainComponent = () => {};
+import { Component } from '../../styles/gloobalStlye';
+
+const MainComponent = () => <Component />;
 
 export default MainComponent;
