@@ -1,14 +1,10 @@
 import React from 'react';
-import Axios from 'axios';
 
 import { Landing, MainComponent } from '../../components/Main';
-import { MainContainer } from '../../styles/main';
+import { Container } from '../../styles/gloobalStlye';
 
-const Main = () => {
-  const Login
-  return (
-    <MainContainer>{localStorage.getItem('token') ? <MainComponent /> : <Landing />}</MainContainer>
-  );
-};
+const Main = () => (
+  <Container>{localStorage.getItem('token') ? <MainComponent /> : <Landing />}</Container>
+);
 
 export default Main;
