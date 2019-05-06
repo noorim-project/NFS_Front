@@ -1,4 +1,18 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+
+export const Component = styled.div`
+  width: 1280px;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  margin-left: -640px;
+`;
+
+export const Container = styled.div`
+  width: 100%;
+  min-width: 1280px;
+  height: 100%;
+`;
 
 export default createGlobalStyle`
     /* css initialize */
