@@ -1,12 +1,22 @@
 import React from 'react';
 
 import { Component } from '../../styles/gloobalStlye';
-import { LandingTeamText } from '../../styles/main';
+import {
+  LandingTeamText,
+  LandingContents,
+  LadingSubtitleText,
+  LandingComponent,
+} from '../../styles/main';
 
 const Landing = () => (
-  <Component>
-    <LandingTeamText>NFS</LandingTeamText>
-  </Component>
+  <LandingComponent>
+    <Component>
+      <LandingTeamText>NFS</LandingTeamText>
+      <LandingContents>
+        <LadingSubtitleText>Noorim For Students</LadingSubtitleText>
+      </LandingContents>
+    </Component>
+  </LandingComponent>
 );
 
 export default Landing;
