@@ -9,8 +9,8 @@ export const Component = styled.div`
 `;
 
 export const Container = styled.div`
-  width: 100%;
-  min-width: 1280px;
+  /* width: 100%;
+  min-width: 1280px; */
   height: 100%;
 `;
 
@@ -20,7 +20,13 @@ export default createGlobalStyle`
     width: 100%;
     height: 100%;
     min-width: 1180px;
-    font-family: 'Lato', 'Nanum Gothic Coding', sans-serif;
+    font-family: Lato, 'Nanum Gothic Coding', sans-serif;
+    overflow-x: hidden;
+  }
+
+  #root {
+    width: 100%;
+    height: 100%;
   }
 
   input[type=password] {
