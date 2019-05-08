@@ -20,7 +20,7 @@ export default createGlobalStyle`
     width: 100%;
     height: 100%;
     min-width: 1180px;
-    font-family: Lato, 'Nanum Gothic Coding', sans-serif;
+    font-family: Lato, NanumSquareRound, sans-serif;
     overflow-x: hidden;
   }
 
@@ -72,5 +72,10 @@ export default createGlobalStyle`
       color: #000;
       text-decoration: none;
     }
+  }
+
+  /* flex filter */
+  .filter {
+    flex-grow: 1;
   }
 `;
