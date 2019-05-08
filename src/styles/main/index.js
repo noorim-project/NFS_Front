@@ -1,59 +1,110 @@
 import styled from 'styled-components';
 import MainLandingCover from '../../assets/Main/IMAGE_Landing.jpg';
+import { Link } from 'react-router-dom';
 
 export const LandingComponent = styled.div`
   background-image: url('${MainLandingCover}');
-  background-size: cover;
+  position: relative;
   background-position: center;
   background-repeat: no-repeat;
-  width: 1920px;
+  background-size: cover;
+  width: 100%;
   height: 100%;
   color: #ffffff;
+  overflow-y: hidden;
 `;
 
-export const LandingTeamText = styled.h1`
-  font-size: 112px;
-  line-height: 1.2;
-  text-align: left;
-  opacity: 0;
+export const LandingItems = styled.div`
+  width: 1280px;
+  height: 690px;
+  overflow: hidden;
   position: absolute;
   top: 50%;
-  animation: LandingTeamTextAnimation 3s ease-in-out 0.5s forwards;
+  display: flex;
+  flex-direction: column;
+  margin-top: -60px;
+  opacity: 0;
+  animation: LandingItemsAnimation 2s ease-in-out 0.5s forwards;
 
-  @keyframes LandingTeamTextAnimation {
+  @keyframes LandingItemsAnimation {
     0% {
       opacity: 0;
-      transform: translate(0, -50%);
     }
 
     20% {
       opacity: 1;
-      transform: translate(0, -50%);
     }
 
-    30% {
+    26% {
       opacity: 1;
-      transform: translate(0, -50%);
+      margin-top: -60px;
     }
 
     100% {
       opacity: 1;
-      transform: translate(0, -250%);
+      margin-top: -345px;
     }
   }
 `;
 
+export const LandingTeamText = styled.h1`
+  font-size: 112px;
+  font-weight: bold;
+`;
+
 export const LandingContents = styled.div`
   width: 100%;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: ;
+  animation: LandingContentsAnimation 3.3s ease-in-out forwards;
+
+  @keyframes LandingContentsAnimation {
+    0% {
+      opacity: 0;
+    }
+
+    82% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
 export const LadingSubtitleText = styled.h2`
   font-size: 56px;
   font-weight: bold;
-  line-height: 1.2;
-  text-align: left;
+  margin-left: 5px;
+`;
+
+export const LandingMessage = styled.p`
+  font-size: 36px;
+  line-height: 1.13;
+  margin-top: 70px;
+`;
+
+export const LandingButtonCover = styled.div`
+  width: 580px;
+  height: 64px;
+  margin: 250px auto 0;
+  display: flex;
+`;
+
+export const Button = styled(Link)`
+  width: 180px;
+  height: 64px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const LandingButtonContent = styled.p`
+  font-size: 28px;
+  line-height: 28px;
+  margin: 0 auto;
 `;
