@@ -1,0 +1,22 @@
+branches:
+  only:
+    - master
+
+language: node.js
+node_js:
+  - "node"
+
+sudo: required
+
+before_install:
+  - pip install awscli
+
+install:
+  - npm install
+
+script:
+  - npm run build
+
+after_success:
+  - aws s3 sync ./build s3://noorim.istruly.sexy
+  - aws cloudfront create-invalidation --distribution-id EPLPYXEKYRT1I --paths '/*'
