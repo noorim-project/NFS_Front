@@ -1,4 +1,5 @@
-import Landing from './Landing';
-import MainComponent from './MainComponent';
+import Landing from './Landing/Landing';
+import Main from './Main';
+import LandingButton from './Landing/LandingButton';
 
-export { Landing, MainComponent };
+export { Landing, Main, LandingButton };
