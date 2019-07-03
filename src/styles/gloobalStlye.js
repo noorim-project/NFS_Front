@@ -21,7 +21,7 @@ export default createGlobalStyle`
     height: 100%;
     min-width: 1180px;
     font-family: Lato, NanumSquareRound, sans-serif;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
 
   #root {
