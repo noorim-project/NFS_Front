@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="BTN_닫기" data-name="BTN 닫기" transform="translate(-485 -78)">
+    <rect id="rectangle" width="30" height="30" transform="translate(485 78)" fill="none"/>
+    <path id="path" d="M25,7,23,5l-8,8L7,5,5,7l8,8L5,23l2,2,8-8,8,8,2-2-8-8Z" transform="translate(485 78)" fill="#3e3e3e" fill-rule="evenodd"/>
+  </g>
+</svg>
