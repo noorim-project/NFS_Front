@@ -1,7 +1,7 @@
-// import { combineReducers } from 'redux';
+import { combineReducers } from 'redux';
 
-// import from ;
+import landingReducer from './landingReducer';
 
-// export default combineReducers({
-
-// });
+export default combineReducers({
+  landingReducer,
+});
