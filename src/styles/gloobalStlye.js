@@ -1,4 +1,18 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+
+export const Component = styled.div`
+  width: 1280px;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  margin-left: -640px;
+`;
+
+export const Container = styled.div`
+  /* width: 100%;
+  min-width: 1280px; */
+  height: 100%;
+`;
 
 export default createGlobalStyle`
     /* css initialize */
@@ -6,7 +20,13 @@ export default createGlobalStyle`
     width: 100%;
     height: 100%;
     min-width: 1180px;
-    font-family: 'Lato', 'Nanum Gothic Coding', sans-serif;
+    font-family: Lato, NanumSquareRound, sans-serif;
+    overflow-x: hidden;
+  }
+
+  #root {
+    width: 100%;
+    height: 100%;
   }
 
   input[type=password] {
@@ -52,5 +72,10 @@ export default createGlobalStyle`
       color: #000;
       text-decoration: none;
     }
+  }
+
+  /* flex filter */
+  .filter {
+    flex-grow: 1;
   }
 `;
