@@ -8,17 +8,20 @@ import { PopUpCover } from '../PopUp';
 import {
   changeRegistarNextPage,
   changeFindPwNextPage,
+  resetPagenation,
 } from '../../../core/redux/actions/landingPage';
 
 const Landing = ({
   isOpenPopUp,
   setIsOpenPopUp,
+  isOpenLanding,
   registarPaginationList,
   registarButtonText,
   findPasswordPaginationList,
   findPasswordButtonText,
   moveToRegistarNextPage,
   moveToFindPwNextPage,
+  resetPagenation,
 }) => {
   const [isLogin, setIsLogin] = useState(false);
   const [isRegister, setIsRegister] = useState(false);
@@ -32,6 +35,7 @@ const Landing = ({
   const setPopUpClose = useCallback(changedEvent => {
     setIsOpenPopUp(false);
     changedEvent(false);
+    resetPagenation();
   }, []);
 
   return (
@@ -56,9 +60,9 @@ const Landing = ({
             setPopUpClose={setPopUpClose}
           />
         ) : (
-          <S.LandingItems>
+          <S.LandingItems isOpenLanding={isOpenLanding}>
             <S.LandingTeamText>NFS</S.LandingTeamText>
-            <S.LandingContents>
+            <S.LandingContents isOpenLanding={isOpenLanding}>
               <S.LadingSubtitleText>Noorim For Students</S.LadingSubtitleText>
               <S.LandingMessage>
                 학생들의
@@ -96,6 +100,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   moveToRegistarNextPage: () => dispatch(changeRegistarNextPage()),
   moveToFindPwNextPage: () => dispatch(changeFindPwNextPage()),
+  resetPagenation: () => dispatch(resetPagenation()),
 });
 
 export default connect(
