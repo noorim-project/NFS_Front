@@ -44,7 +44,10 @@ export const LandingItems = styled.div`
   flex-direction: column;
   margin-top: -60px;
   opacity: 0;
-  animation: LandingItemsAnimation 2s ease-in-out 0.5s forwards;
+  ${props =>
+    props.isOpenLanding && 'animation: LandingItemsAnimation 2s ease-in-out 0.5s forwards'};
+  ${props => props.isOpenLanding || 'opacity: 1'};
+  ${props => props.isOpenLanding || 'margin-top: -345px'};
 
   @keyframes LandingItemsAnimation {
     0% {
@@ -83,7 +86,9 @@ export const LandingContents = styled.div`
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  animation: LandingContentsAnimation 3.3s ease-in-out forwards;
+  ${props =>
+    props.isOpenLanding && 'animation: LandingContentsAnimation 3.3s ease-in-out forwards'};
+  ${props => props.isOpenLanding || 'opacity: 1'};
 
   @keyframes LandingContentsAnimation {
     0% {
@@ -142,17 +147,6 @@ export const PopUpComponent = styled.div`
   top: 50%;
   margin-left: -250px;
   margin-top: -350px;
-  animation: openPopUp 0.2s ease forwards;
-
-  @keyframes openPopUp {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
 `;
 
 export const PopUpPosition = styled.div`
