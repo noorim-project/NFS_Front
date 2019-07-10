@@ -1,6 +1,7 @@
 import React from 'react';
 
 import PopUp from './PopUp';
+import { moveToLogin } from '../../../lib/utils/popup/moveToLogin';
 
 const TransformPopUp = ({
   title,
@@ -10,10 +11,12 @@ const TransformPopUp = ({
   moveToNextPage,
   setPopUpClose,
   handlePopUp,
+  setIsLogin,
+  resetPagenation,
 }) => (
   <>
     {inputData.map((e, index) => {
-      if (paginationList[index])
+      if (paginationList[index] && !paginationList[paginationList.length - 1]) {
         return (
           <PopUp
             key={index}
@@ -25,8 +28,27 @@ const TransformPopUp = ({
             buttonOnClickEvent={moveToNextPage}
             setPopUpClose={setPopUpClose}
             handlePopUp={handlePopUp}
+            isCheckContent={false}
           />
         );
+      } else if (paginationList[index] && paginationList[paginationList.length - 1]) {
+        return (
+          <PopUp
+            key={index}
+            title={title}
+            inputData={e}
+            buttonText={buttonText}
+            isPagination
+            paginationList={paginationList}
+            buttonOnClickEvent={moveToLogin}
+            setPopUpClose={setPopUpClose}
+            handlePopUp={handlePopUp}
+            setIsLogin={setIsLogin}
+            isCheckContent={true}
+            resetPagenation={resetPagenation}
+          />
+        );
+      }
     })}
   </>
 );

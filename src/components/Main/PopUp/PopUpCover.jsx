@@ -18,6 +18,7 @@ const PopUpCover = ({
   moveToFindPwNextPage,
   setPopUpOpen,
   setPopUpClose,
+  resetPagenation,
 }) => (
   <>
     {isLogin && (
@@ -30,6 +31,7 @@ const PopUpCover = ({
         setIsFindPassword={setIsFindPassword}
         setPopUpClose={setPopUpClose}
         handlePopUp={setIsLogin}
+        isCheckContent={false}
       />
     )}
     {isRegister && (
@@ -40,7 +42,9 @@ const PopUpCover = ({
         buttonText={registarButtonText}
         moveToNextPage={moveToRegistarNextPage}
         setPopUpClose={setPopUpClose}
+        setIsLogin={setIsLogin}
         handlePopUp={setIsRegister}
+        resetPagenation={resetPagenation}
       />
     )}
     {isFindPassword && (
@@ -51,7 +55,9 @@ const PopUpCover = ({
         buttonText={findPasswordButtonText}
         moveToNextPage={moveToFindPwNextPage}
         setPopUpClose={setPopUpClose}
+        setIsLogin={setIsLogin}
         handlePopUp={setIsFindPassword}
+        resetPagenation={resetPagenation}
       />
     )}
   </>
