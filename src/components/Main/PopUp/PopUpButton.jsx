@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import * as S from '../../../styles/main';
 
-const PopUpButton = ({ isPagination, paginationList, buttonOnClickEvent, buttonText }) => (
+const PopUpButton = ({
+  isPagination,
+  paginationList,
+  buttonOnClickEvent,
+  buttonText,
+  isCheckContent,
+  setIsLogin,
+  handlePopUp,
+  resetPagenation,
+}) => (
   <S.PopUpButtonCover>
     {isPagination && (
       <S.Pagination>
@@ -10,7 +19,13 @@ const PopUpButton = ({ isPagination, paginationList, buttonOnClickEvent, buttonT
         ))}
       </S.Pagination>
     )}
-    <S.PopUpButton onClick={buttonOnClickEvent}>
+    <S.PopUpButton
+      onClick={
+        isCheckContent
+          ? () => buttonOnClickEvent(handlePopUp, setIsLogin, resetPagenation)
+          : buttonOnClickEvent
+      }
+    >
       <S.PopUpText size="26px" color="#ffffff">
         {buttonText}
       </S.PopUpText>
