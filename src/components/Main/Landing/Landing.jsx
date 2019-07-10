@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 
 import * as G from '../../../styles/gloobalStlye';
 import * as S from '../../../styles/main';
-import { LandingButton } from '..';
 import { PopUpCover } from '../PopUp';
 import {
   changeRegistarNextPage,
   changeFindPwNextPage,
   resetPagenation,
 } from '../../../core/redux/actions/landingPage';
+import LandingView from './LandingView';
 
 const Landing = ({
   isOpenPopUp,
@@ -58,32 +58,15 @@ const Landing = ({
             moveToFindPwNextPage={moveToFindPwNextPage}
             setPopUpOpen={setPopUpOpen}
             setPopUpClose={setPopUpClose}
+            resetPagenation={resetPagenation}
           />
         ) : (
-          <S.LandingItems isOpenLanding={isOpenLanding}>
-            <S.LandingTeamText>NFS</S.LandingTeamText>
-            <S.LandingContents isOpenLanding={isOpenLanding}>
-              <S.LadingSubtitleText>Noorim For Students</S.LadingSubtitleText>
-              <S.LandingMessage>
-                학생들의
-                <br />
-                편리함을 추구합니다
-              </S.LandingMessage>
-              <S.LandingButtonCover>
-                <LandingButton
-                  clickEvent={setPopUpOpen}
-                  changedEvent={setIsLogin}
-                  content="로그인"
-                />
-                <div className="filter" />
-                <LandingButton
-                  clickEvent={setPopUpOpen}
-                  changedEvent={setIsRegister}
-                  content="회원가입"
-                />
-              </S.LandingButtonCover>
-            </S.LandingContents>
-          </S.LandingItems>
+          <LandingView
+            isOpenLanding={isOpenLanding}
+            setPopUpOpen={setPopUpOpen}
+            setIsLogin={setIsLogin}
+            setIsRegister={setIsRegister}
+          />
         )}
       </G.Component>
     </S.LandingComponent>
