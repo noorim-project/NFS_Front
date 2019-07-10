@@ -244,6 +244,31 @@ export const PopUpButton = styled.div`
   cursor: pointer;
 `;
 
+export const ContentCover = styled.div`
+  width: 100%;
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const CheckIcon = styled.img`
+  width: 120px;
+  height: 120px;
+  margin-bottom: 50px;
+`;
+
+export const ContentTitle = styled.p`
+  font-size: 26px;
+  color: #3e3e3e;
+  margin-bottom: 20px;
+`;
+
+export const ContentText = styled.p`
+  font-size: 18px;
+  color: #3e3e3e;
+`;
+
 // MainPage
 export const MainComponent = styled.div`
   background-color: #24252f;
