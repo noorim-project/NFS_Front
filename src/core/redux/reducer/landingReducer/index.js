@@ -1,4 +1,8 @@
-import { CHANGE_REGISTAR_NEXT_PAGE, CHANGE_FIND_PW_NEXT_PAGE } from '../../actions/landingPage';
+import {
+  CHANGE_REGISTAR_NEXT_PAGE,
+  CHANGE_FIND_PW_NEXT_PAGE,
+  RESET_PAGENATION,
+} from '../../actions/landingPage';
 
 let isActive = false;
 
@@ -44,9 +48,17 @@ const landingReducer = (state = initialState, action) => {
           }
           return 0;
         }),
-        findPasswordButtonText: findPasswordPaginationList[findPasswordPaginationList.lenght - 2]
+        findPasswordButtonText: findPasswordPaginationList[findPasswordPaginationList.length - 2]
           ? '로그인 화면으로'
           : '다음',
+      };
+    case RESET_PAGENATION:
+      return {
+        ...state,
+        registarPaginationList: [1, 0, 0],
+        registarButtonText: '다음',
+        findPasswordPaginationList: [1, 0, 0, 0],
+        findPasswordButtonText: '다음',
       };
     default:
       return state;

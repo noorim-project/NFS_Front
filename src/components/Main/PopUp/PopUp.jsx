@@ -3,6 +3,8 @@ import React from 'react';
 import * as S from '../../../styles/main';
 import AdditionalContent from './AdditionalContent';
 import cancleButton from '../../../assets/Landing/cancleButton.svg';
+import PopUpButton from './PopUpButton';
+import PopUpContent from './PopUpContent';
 
 const PopUp = ({
   title,
@@ -13,9 +15,12 @@ const PopUp = ({
   paginationList,
   buttonOnClickEvent,
   setIsFindPassword,
-  handlePopUp,
   setPopUpOpen,
   setPopUpClose,
+  handlePopUp,
+  isCheckContent,
+  setIsLogin,
+  resetPagenation,
 }) => (
   <S.PopUpComponent>
     <S.PopUpPosition>
@@ -28,37 +33,17 @@ const PopUp = ({
         <S.PopUpText size="50px" color="#3e3e3e" fontBold>
           {title}
         </S.PopUpText>
-        {inputData.map((i, index) => (
-          <S.PopUpInputCover key={index} marginTop={i.marginTop}>
-            <S.PopUpInput
-              marginRight={i.marginRight}
-              widthSize={i.size}
-              placeholder={i.placeholder}
-              type={i.type}
-            />
-            {i.citationButton && (
-              <S.PopUpButton small>
-                <S.PopUpText size="10px" cursorPointer>
-                  {i.citationText}
-                </S.PopUpText>
-              </S.PopUpButton>
-            )}
-          </S.PopUpInputCover>
-        ))}
-        <S.PopUpButtonCover>
-          {isPagination && (
-            <S.Pagination>
-              {paginationList.map((isActive, index) => (
-                <S.PaginationButton key={index} active={isActive} />
-              ))}
-            </S.Pagination>
-          )}
-          <S.PopUpButton onClick={() => buttonOnClickEvent()}>
-            <S.PopUpText size="26px" color="#ffffff">
-              {buttonText}
-            </S.PopUpText>
-          </S.PopUpButton>
-        </S.PopUpButtonCover>
+        <PopUpContent inputData={inputData} isCheckContent={isCheckContent} />
+        <PopUpButton
+          isPagination={isPagination}
+          paginationList={paginationList}
+          buttonOnClickEvent={buttonOnClickEvent}
+          buttonText={buttonText}
+          isCheckContent={isCheckContent}
+          setIsLogin={setIsLogin}
+          handlePopUp={handlePopUp}
+          resetPagenation={resetPagenation}
+        />
         {additionalContent && (
           <AdditionalContent setPopUpOpen={setPopUpOpen} setIsFindPassword={setIsFindPassword} />
         )}

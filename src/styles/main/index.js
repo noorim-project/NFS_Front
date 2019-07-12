@@ -44,7 +44,10 @@ export const LandingItems = styled.div`
   flex-direction: column;
   margin-top: -60px;
   opacity: 0;
-  animation: LandingItemsAnimation 2s ease-in-out 0.5s forwards;
+  ${props =>
+    props.isOpenLanding && 'animation: LandingItemsAnimation 2s ease-in-out 0.5s forwards'};
+  ${props => props.isOpenLanding || 'opacity: 1'};
+  ${props => props.isOpenLanding || 'margin-top: -345px'};
 
   @keyframes LandingItemsAnimation {
     0% {
@@ -83,7 +86,9 @@ export const LandingContents = styled.div`
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  animation: LandingContentsAnimation 3.3s ease-in-out forwards;
+  ${props =>
+    props.isOpenLanding && 'animation: LandingContentsAnimation 3.3s ease-in-out forwards'};
+  ${props => props.isOpenLanding || 'opacity: 1'};
 
   @keyframes LandingContentsAnimation {
     0% {
@@ -142,17 +147,6 @@ export const PopUpComponent = styled.div`
   top: 50%;
   margin-left: -250px;
   margin-top: -350px;
-  animation: openPopUp 0.2s ease forwards;
-
-  @keyframes openPopUp {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
 `;
 
 export const PopUpPosition = styled.div`
@@ -248,6 +242,31 @@ export const PopUpButton = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+`;
+
+export const ContentCover = styled.div`
+  width: 100%;
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const CheckIcon = styled.img`
+  width: 120px;
+  height: 120px;
+  margin-bottom: 50px;
+`;
+
+export const ContentTitle = styled.p`
+  font-size: 26px;
+  color: #3e3e3e;
+  margin-bottom: 20px;
+`;
+
+export const ContentText = styled.p`
+  font-size: 18px;
+  color: #3e3e3e;
 `;
 
 // MainPage

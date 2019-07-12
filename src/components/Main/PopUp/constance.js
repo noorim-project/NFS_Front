@@ -29,6 +29,13 @@ export const REGISTER_INPUT_DATA = [
       citationText: '인증번호 확인',
     },
   ],
+  [
+    {
+      title: '회원가입 완료',
+      checkContentMain: '회원가입이 성공적으로 완료 되었습니다.',
+      checkContentSub: 'NFS 서비스를 사용하실 수 있습니다.',
+    },
+  ],
 ];
 
 export const FIND_PASSWORD_INPUT_DATA = [
@@ -59,5 +66,12 @@ export const FIND_PASSWORD_INPUT_DATA = [
   [
     { marginTop: '70px', placeholder: '새 비밀번호', type: 'password' },
     { marginTop: '40px', placeholder: '새 비밀번호 확인', type: 'password' },
+  ],
+  [
+    {
+      title: '비밀번호 변경 완료',
+      checkContentMain: '비밀번호가 성공적으로 변경 되었습니다.',
+      checkContentSub: '이제부터 변경된 비밀번호로 로그인 하실 수 있습니다.',
+    },
   ],
 ];
