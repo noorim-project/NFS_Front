@@ -253,8 +253,9 @@ export const PopUpButton = styled.div`
 // MainPage
 export const MainComponent = styled.div`
   background-color: #24252f;
-  height: 100%;
+  height: 380%;
   width: 100%;
+  min-height:3000px;
 `;
 
 export const fComponent = styled(Component)``;

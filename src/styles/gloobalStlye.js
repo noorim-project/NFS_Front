@@ -1,11 +1,11 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
 export const Component = styled.div`
-  width: 1280px;
+  width: ${props => props.togle ? "100%" : "1280px" };
   height: 100%;
   position: absolute;
-  left: 50%;
-  margin-left: -640px;
+left: ${props => props.togle ? 0 : "50%"};
+margin-left: ${props => props.togle  ? 0 : "-640px"};
 `;
 
 export const Container = styled.div`
