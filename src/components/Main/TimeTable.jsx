@@ -10,7 +10,7 @@ const TimeTable = ()=>{
     <S.TimeTable>
       <S.Content_tbody>
       <S.Content_tr>
-        <S.TimeTableTh></S.TimeTableTh>
+        <S.TimeTableTh padding="1"></S.TimeTableTh>
         <S.TimeTableTh color="white" fontsize="25px">월</S.TimeTableTh>
         <S.TimeTableTh color="white" fontsize="25px">화</S.TimeTableTh>
         <S.TimeTableTh color="white" fontsize="25px">수</S.TimeTableTh>
