@@ -9,10 +9,10 @@ const MainNoticeContent = ({number,
   {
   return(
     <Content_tr>
-      <Content_td>{number}</Content_td>
-      <Content_td left="50px" align="left">{content}</Content_td>
-      <Content_td>{name}</Content_td>
-      <Content_td>{date}</Content_td>
+      <Content_td><a href="#">{number}</a></Content_td>
+      <Content_td left="50px" align="left"><a href="#">{content}</a></Content_td>
+      <Content_td><a href="#">{name}</a></Content_td>
+      <Content_td><a href="#">{date}</a></Content_td>
     </Content_tr>
   );
 };
