@@ -1,12 +1,16 @@
 import React from 'react';
 
-import { Component } from '../../styles/gloobalStlye';
-import { MainComponent } from '../../styles/main';
+import MainFirstPage from './MainFirstPage';
+import MainSecondPage from './MainSecondPage';
+import MainThirdPage from './MainThirdPage';
+import * as S from '../../styles/main';
 
 const Main = () => (
-  <MainComponent>
-    <Component />
-  </MainComponent>
+  <S.MainComponent>
+    <MainFirstPage />
+    <MainSecondPage />
+    <MainThirdPage/>
+  </S.MainComponent>
 );
 
 export default Main;
