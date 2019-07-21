@@ -1,18 +1,16 @@
 import React from 'react';
 
-import { Component } from '../../styles/gloobalStlye';
-import { MainComponent } from '../../styles/main';
-import  { Header_div, Design_text, Header_Content , Content_div , Design_div , Content_title , Content_table , Content_tbody , Content_td , Content_tr , Content_th}  from './Main_content';
-import MainFirstPage from './MainFirstPage';  
+import MainFirstPage from './MainFirstPage';
 import MainSecondPage from './MainSecondPage';
+import MainThirdPage from './MainThirdPage';
+import * as S from '../../styles/main';
 
 const Main = () => (
-    <MainComponent>
-      <Component>
-        <MainFirstPage />
-        <MainSecondPage />
-      </Component>
-    </MainComponent>
+  <S.MainComponent>
+    <MainFirstPage />
+    <MainSecondPage />
+    <MainThirdPage/>
+  </S.MainComponent>
 );
 
 export default Main;
