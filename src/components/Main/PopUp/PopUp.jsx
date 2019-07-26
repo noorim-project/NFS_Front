@@ -3,8 +3,8 @@ import React from 'react';
 import * as S from '../../../styles/main';
 import AdditionalContent from './AdditionalContent';
 import cancleButton from '../../../assets/Landing/cancleButton.svg';
-import PopUpInput from './PopUpInput';
 import PopUpButton from './PopUpButton';
+import PopUpContent from './PopUpContent';
 
 const PopUp = ({
   title,
@@ -15,9 +15,12 @@ const PopUp = ({
   paginationList,
   buttonOnClickEvent,
   setIsFindPassword,
-  handlePopUp,
   setPopUpOpen,
   setPopUpClose,
+  handlePopUp,
+  isCheckContent,
+  setIsLogin,
+  resetPagenation,
 }) => (
   <S.PopUpComponent>
     <S.PopUpPosition>
@@ -30,12 +33,16 @@ const PopUp = ({
         <S.PopUpText size="50px" color="#3e3e3e" fontBold>
           {title}
         </S.PopUpText>
-        <PopUpInput inputData={inputData} />
+        <PopUpContent inputData={inputData} isCheckContent={isCheckContent} />
         <PopUpButton
           isPagination={isPagination}
           paginationList={paginationList}
           buttonOnClickEvent={buttonOnClickEvent}
           buttonText={buttonText}
+          isCheckContent={isCheckContent}
+          setIsLogin={setIsLogin}
+          handlePopUp={handlePopUp}
+          resetPagenation={resetPagenation}
         />
         {additionalContent && (
           <AdditionalContent setPopUpOpen={setPopUpOpen} setIsFindPassword={setIsFindPassword} />

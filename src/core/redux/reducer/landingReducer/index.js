@@ -30,7 +30,7 @@ const landingReducer = (state = initialState, action) => {
           }
           return 0;
         }),
-        registarButtonText: registarPaginationList[registarPaginationList.length - 1]
+        registarButtonText: registarPaginationList[registarPaginationList.length - 2]
           ? '로그인 화면으로'
           : '다음',
       };
@@ -48,7 +48,7 @@ const landingReducer = (state = initialState, action) => {
           }
           return 0;
         }),
-        findPasswordButtonText: findPasswordPaginationList[findPasswordPaginationList.lenght - 2]
+        findPasswordButtonText: findPasswordPaginationList[findPasswordPaginationList.length - 2]
           ? '로그인 화면으로'
           : '다음',
       };
@@ -56,7 +56,9 @@ const landingReducer = (state = initialState, action) => {
       return {
         ...state,
         registarPaginationList: [1, 0, 0],
+        registarButtonText: '다음',
         findPasswordPaginationList: [1, 0, 0, 0],
+        findPasswordButtonText: '다음',
       };
     default:
       return state;
